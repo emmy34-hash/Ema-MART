@@ -1,0 +1,149 @@
+/* Custom Theming & Typography tokens configuration */
+:root {
+    --primary-slate: #0F172A;       /* Deep High-End Midnight Base Slate */
+    --accent-vibrant: #F97316;     /* High-Visibility Retail Callout Orange */
+    --accent-glow: #FCD34D;        /* Highlight Warning Contrast Amber */
+    --canvas-bg: #F8FAFC;          /* Clean High-Contrast Soft White */
+    --card-surface: #FFFFFF;       /* Pure White Background Surfaces */
+    --text-main: #334155;          /* Ergonomic Secondary Typography Slate */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--canvas-bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Custom Interactive Brand CSS Logo Styles */
+.logo-box {
+    background: linear-gradient(135deg, var(--accent-vibrant) 0%, #EA580C 100%);
+    padding: 6px 10px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+}
+.mini-box { padding: 4px 8px; border-radius: 6px; }
+.logo-icon { font-size: 1.2rem; color: #fff; animation: bounceSlow 3s infinite ease-in-out; }
+
+@keyframes bounceSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Navigation Interface Parameters */
+.navbar {
+    background-color: var(--primary-slate) !important;
+    border-bottom: 2px solid var(--accent-vibrant);
+    padding: 0.75rem 0;
+}
+.text-accent { color: var(--accent-vibrant) !important; }
+
+/* Mid Header Live Input Search Bar */
+.search-wrapper { width: 100%; max-width: 450px; }
+.search-input {
+    border: 1px solid #334155;
+    background-color: #1E293B;
+    color: #fff !important;
+    border-radius: 8px 0 0 8px !important;
+}
+.search-input::placeholder { color: #94A3B8; }
+.search-input:focus { background-color: #1E293B; border-color: var(--accent-vibrant); box-shadow: none; }
+.btn-search { background-color: var(--accent-vibrant); color: white; border-radius: 0 8px 8px 0 !important; border: none; }
+
+.nav-link { transition: all 0.2s ease; }
+.nav-link:hover { color: var(--accent-glow) !important; }
+
+/* Dynamic Horizontal Category Navigation Buttons */
+.filter-btn-group::-webkit-scrollbar { height: 4px; }
+.filter-btn-group::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+.btn-filter {
+    background-color: #E2E8F0;
+    color: #475569;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+.btn-filter:hover, .btn-filter.active-filter {
+    background-color: var(--accent-vibrant);
+    color: #ffffff !important;
+}
+
+/* SPA State Transitions CSS rules */
+@keyframes viewFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.view-section { animation: viewFadeIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+
+/* Multi-Slide Promotional Carousel Banner */
+.carousel-img { height: 360px; object-fit: cover; filter: brightness(0.6); }
+.modern-caption {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
+    border-left: 4px solid var(--accent-vibrant);
+    border-radius: 0 12px 12px 0;
+    padding: 24px;
+    text-align: left;
+    max-width: 450px;
+    left: 5%;
+    bottom: 10%;
+}
+
+/* Retail Grid Product Cards Setup */
+.product-card { border: none; background-color: var(--card-surface); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(15, 23, 42, 0.06) !important; }
+.img-frame { position: relative; height: 180px; background-color: #F1F5F9; overflow: hidden; }
+.product-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.product-card:hover .product-img { transform: scale(1.05); }
+.retail-tag { position: absolute; top: 10px; left: 10px; background-color: var(--primary-slate); color: #fff; font-size: 0.65rem; font-weight: 600; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+.discount-badge { position: absolute; top: 10px; right: 10px; background-color: #DC2626; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+
+.btn-action { background-color: var(--accent-vibrant); color: #fff; border: none; border-radius: 6px; transition: background 0.2s ease; }
+.btn-action:hover { background-color: #EA580C; color: #fff; }
+.btn-auth { background: transparent; border: 1.5px solid var(--accent-glow); color: var(--accent-glow); border-radius: 20px; font-weight: 500; }
+.btn-auth:hover { background: var(--accent-glow); color: var(--primary-slate); }
+
+/* Identity Management Modals Styles */
+.auth-card { background-color: var(--card-surface); border-radius: 16px; }
+.tabs-container { background-color: #F1F5F9; border-radius: 8px; padding: 4px; }
+.auth-tab { border: none; background: transparent; color: #64748B; font-weight: 500; border-radius: 6px; }
+.active-tab { background-color: #fff !important; color: var(--accent-vibrant) !important; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+.form-input { border: 1px solid #CBD5E1; border-radius: 6px; }
+.form-input:focus { border-color: var(--accent-vibrant); box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15); }
+
+/* Billing & Checkout Module Styling */
+.checkout-card { background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%); }
+.checkout-card .form-select, .checkout-card .form-control { background-color: #334155; border: 1px solid #475569; color: #fff; }
+.checkout-card .form-select:focus, .checkout-card .form-control:focus { border-color: var(--accent-vibrant); box-shadow: none; color: #fff; }
+.btn-checkout { background-color: var(--accent-vibrant); color: #fff; border: none; border-radius: 8px; }
+.btn-checkout:hover { background-color: #EA580C; color: #fff; }
+
+/* 5.3-Second Trigger Floating Promotion Card */
+.promo-ad-card {
+    position: fixed;
+    bottom: 24px;
+    right: -400px;
+    width: 320px;
+    background: linear-gradient(135deg, var(--primary-slate) 0%, #1E293B 100%);
+    border: 2px solid var(--accent-vibrant);
+    border-radius: 14px;
+    padding: 18px;
+    z-index: 1060;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.promo-ad-card.ad-active { right: 24px; opacity: 1; }
+.btn-close-ad { position: absolute; top: 6px; right: 10px; background: transparent; border: none; color: #94A3B8; font-size: 1.3rem; cursor: pointer; }
+.btn-close-ad:hover { color: var(--accent-vibrant); }
+.btn-ad-action { background-color: var(--accent-vibrant); color: #fff; border: none; border-radius: 6px; }
+.btn-ad-action:hover { background-color: #EA580C; color: #fff; }
+
+footer { background-color: var(--primary-slate); border-top: 4px solid var(--accent-vibrant); }
+.text-muted-custom { color: #94A3B8; }
